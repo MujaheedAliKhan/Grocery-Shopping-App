@@ -153,6 +153,14 @@ function Navbar({ search, setSearch, cart }) {
           >
             Home
           </Link>
+          {role === "admin" ? (
+                <Link
+                  to={"/add"}
+                  className="cursor-pointer hover:bg-white hover:text-amber-600 py-2 transition duration-100"
+                >
+                  Add Products
+                </Link>
+              ) : (
           <Link
             onClick={() => setNav(false)}
             to={"/products"}
@@ -160,6 +168,8 @@ function Navbar({ search, setSearch, cart }) {
           >
             Products
           </Link>
+
+              )}
           <Link
             onClick={() => setNav(false)}
             to={"/cart"}

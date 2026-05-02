@@ -93,16 +93,16 @@ const AddProduct = ({ fetchProducts, editProduct, setEditProduct }) => {
   }, [editProduct]);
 
   return (
-    <div className="min-h-screen pt-16 flex flex-col justify-center items-center">
+    <div className="min-h-screen pt-34 md:pt-16 mb-4 flex flex-col justify-center items-center">
       {role === "admin" ? (
-        <div className="flex flex-col justify-center items-center border-none bg-gray-50 px-10 py-12 shadow-lg">
+        <div className="flex flex-col justify-center items-center border-none bg-gray-50 px-8 py-8 md:px-10 md:py-12 shadow-lg">
           <h2 className="text-xl font-semibold mb-4">Add Product</h2>
           <input
             type="text"
             placeholder="Product Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="py-3 px-12 mb-4 border bg-white rounded-lg outline-none text-md w-full border-none shadow-lg"
+            className="py-3 px-12 mb-4 border bg-white rounded-lg outline-none text-md w-70 md:w-full border-none shadow-lg"
           />
 
           <input
@@ -110,7 +110,7 @@ const AddProduct = ({ fetchProducts, editProduct, setEditProduct }) => {
             placeholder="Price"
             value={price}
             onChange={(e) => setPrice(Number(e.target.value))}
-            className="py-3 px-12 mb-4 border bg-white rounded-lg outline-none text-md w-full border-none shadow-lg"
+            className="py-3 px-12 mb-4 border bg-white rounded-lg outline-none text-md w-70 md:w-full border-none shadow-lg"
           />
 
           <input
@@ -118,13 +118,13 @@ const AddProduct = ({ fetchProducts, editProduct, setEditProduct }) => {
             placeholder="Quantity"
             value={quantity}
             onChange={(e) => setQuantity(Number(e.target.value))}
-            className="py-3 px-12 mb-4 border bg-white rounded-lg outline-none text-md w-full border-none shadow-lg"
+            className="py-3 px-12 mb-4 border bg-white rounded-lg outline-none text-md w-70 md:w-full border-none shadow-lg"
           />
 
           <select
             value={category}
             onChange={(e) => setCategory(e.target.value)}
-            className="py-3 px-12 mb-4 border bg-white rounded-lg outline-none text-md w-full border-none shadow-lg text-gray-400"
+            className="py-3 px-12 mb-4 border bg-white rounded-lg outline-none text-md w-70 md:w-full border-none shadow-lg text-gray-400"
           >
             <option value="">Select Category</option>
             <option value="fruits">Fruits</option>
@@ -135,14 +135,14 @@ const AddProduct = ({ fetchProducts, editProduct, setEditProduct }) => {
 
           <label
             htmlFor="fileUpload"
-            className="flex flex-col items-center justify-center w-full h-30 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-amber-500 hover:bg-amber-50 transition"
+            className="flex flex-col items-center justify-center w-70 md:w-full h-30 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-amber-500 hover:bg-amber-50 transition"
           >
             <span className="text-gray-500">Click to upload image</span>
           </label>
 
           <input
             id="fileUpload"
-            className="py-3 px-12 mb-4 border text-center bg-white rounded-lg outline-none text-md w-full border-none shadow-lg"
+            className="py-3 px-12 mb-4 border text-center bg-white rounded-lg outline-none text-md w-70 md:w-full border-none shadow-lg"
             type="file"
             onChange={(e) => setImageFile(e.target.files[0])}
           />
