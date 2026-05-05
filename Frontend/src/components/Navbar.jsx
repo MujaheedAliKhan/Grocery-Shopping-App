@@ -121,7 +121,7 @@ function Navbar({ search, setSearch, cart }) {
                 className="bg-white hidden md:flex border text-amber-600 px-3 py-2 font-semibold rounded-lg shadow-md hover:bg-amber-600 hover:text-white transition duration-200 hover:border-white"
                 onClick={() => {
                   localStorage.clear();
-                  window.location.href = "/login";
+                  navigate("/login");
                 }}
               >
                 Logout
@@ -182,7 +182,7 @@ function Navbar({ search, setSearch, cart }) {
             onClick={() => {
               setNav(false);
               localStorage.clear();
-              window.location.href = "/login";
+              navigate("/login");
             }}
           >
             Logout

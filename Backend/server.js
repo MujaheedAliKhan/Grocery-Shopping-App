@@ -13,7 +13,10 @@ const authMiddleware = require("./middleware/authMiddleware");
 const adminMiddleware = require("./middleware/adminMiddleware");
 const upload = require("./middleware/upload");
 
-app.use(cors()); //This will help to communicate Allow Access Origin
+app.use(cors({
+  origin: "https://grocery-shopping-frontend.vercel.app",
+  credentials:true
+})); //This will help to communicate Allow Access Origin
 app.use(express.json()); //It accepts the Json data later
 app.use("/api/auth", authRoutes);
 
@@ -148,6 +151,7 @@ app.put(
   },
 );
 
-app.listen(3000, () => {
+const PORT = 3000;
+app.listen(PORT, () => {
   console.log("Server is running on 3000");
 });
